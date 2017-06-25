@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # shows html page for people
+  root 'people#index'
+  # generates all CRUD urls for people
+  resources :people
 end

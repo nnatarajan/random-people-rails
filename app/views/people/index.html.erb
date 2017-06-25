@@ -1,0 +1,22 @@
+<h1>List of People</h1>
+<hr/>
+
+<%= link_to 'Create a new person', new_person_path %>
+
+<% if @people.length == 0  %> 
+    <h3>No people found in the database. Please install faker gem.</h3>
+<% else  %> 
+    <ul>
+        <% @people.each do |person| %> 
+        <li>
+            <%= link_to(person.name, person_path(person)) %>
+            <span> - </span>
+             <%= link_to 'Edit', edit_person_path(person) %>
+             <span> - </span>
+             <%= link_to 'Delete', person_path(person), method: :delete %>
+        </li>
+        <% end %>
+    </ul>
+<% end %>
+
+
