@@ -1,29 +1,5 @@
 <h1>Create New Person</h1>
-<hr />
 
-<%= form_for @person do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name , autofocus: true %>
-    <br />
+<%= render 'form' %>
 
-    <%= f.label :age %>
-    <%= f.text_field :age %>
-    <br />
-
-    <%= f.label :race %>
-    <%= f.text_field :race %>
-     <br />
-
-    <%= f.label :hair_color %>
-    <%= f.text_field :hair_color %>
-    <br />
-
-    <%= f.label :alive %>
-    <%= f.check_box :alive, {checked: true} %>
-    <br />
-
-    <%= f.submit%>
-<% end %>
-
- <br />
 <%= link_to 'List of People', people_path %>

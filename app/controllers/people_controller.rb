@@ -30,7 +30,7 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     if @person.update(person_params)
       # if successful, redirect to show
-      redirect to person_path(@person)
+      redirect_to person_path(@person)
     else
       render :edit
     end
