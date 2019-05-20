@@ -9,21 +9,33 @@
 #                 race: "any",
 #                 hair_color: "really?",
 #                 alive: true)
-50.times do |n|
-    name = Faker::Name.unique.name
-    age =  Faker::Number.between(1, 110)
-    race = Faker::Zelda.character
-    hair_color = Faker::Color.color_name
-    alive = Faker::Boolean
-    Person.create!(name: name,
-                    age: age,
-                    race: race,
-                    hair_color: hair_color,
-                    alive: alive)
+
+require 'faker'
+
+# 50.times do |n|
+#     name = Faker::Name.unique.name
+#     age =  Faker::Number.between(1, 110)
+#     race = Faker::Zelda.character
+#     hair_color = Faker::Color.color_name
+#     alive = Faker::Boolean
+#     Person.create!(name: name,
+#                     age: age,
+#                     race: race,
+#                     hair_color: hair_color,
+#                     alive: alive)
+# end
+
+
+
+100.times do
+    Person.create(
+        name: Faker::Name.unique.name,
+        age: Faker::Number.between(1, 102),
+        race: Faker::Nation.nationality,
+        hair_color: Faker::Color.color_name,
+        alive: Faker::Boolean.boolean
+    )
 end
-
-
-
 
 
 
